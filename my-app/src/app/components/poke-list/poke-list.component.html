@@ -1,0 +1,22 @@
+<po-page-list p-title="Pokemons List">
+  <po-container>
+    <div class="po-row">
+      <div class="po-lg-2 po-mb-1" *ngFor="let p of pokemon">
+        <po-widget [routerLink]="['/pokemon-detail', p.name]">
+          <div class="pokedex-pokemon">
+            <img [ngClass]="{'hidden': !p.imageLoaded}" class="pokedex-pokemon-img po-text-center"
+              (load)="p.imageLoaded = true" [attr.src]="p.sprite">
+            <div class="po-text-center">
+              <span class="pokedex-pokemon-id">
+                #{{ p.id }}
+              </span>
+              <span class="pokedex-pokemon-name">
+                <strong>{{ p.name }}</strong>
+              </span>
+            </div>
+          </div>
+        </po-widget>
+      </div>
+    </div>
+  </po-container>
+</po-page-list>

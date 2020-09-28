@@ -1,0 +1,83 @@
+<po-page-list p-title="{{ name }}">
+  <po-container>
+    <div class="po-row">
+
+      <div class="po-lg-6">
+        <div class="po-row">
+          <po-widget *ngIf="back_default != null" p-title="Back default" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ back_default }}">
+          </po-widget>
+          <po-widget *ngIf="back_female != null" p-title="Back female" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ back_female }}">
+          </po-widget>
+          <po-widget *ngIf="back_shiny != null" p-title="Back shiny" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ back_shiny }}">
+          </po-widget>
+          <po-widget *ngIf="back_shiny_female != null" p-title="Back shiny female" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ back_shiny_female }}">
+          </po-widget>
+          <po-widget *ngIf="front_default != null" p-title="Front default" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ front_default }}">
+          </po-widget>
+          <po-widget *ngIf="front_female != null" p-title="Front female" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ front_female }}">
+          </po-widget>
+          <po-widget *ngIf="front_shiny != null" p-title="Front shiny" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ front_shiny }}">
+          </po-widget>
+          <po-widget *ngIf="front_shiny_female != null" p-title="Front shiny female" class="po-lg-6 po-mb-1">
+            <img class="pokedex-pokemon-img po-text-center" src="{{ front_shiny_female }}">
+          </po-widget>
+        </div>
+      </div>
+
+      <div class="po-lg-6">
+        <po-tabs>
+          <po-tab p-label="Pokédex" [p-active]="true">
+            <po-container>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <strong>Type: </strong>
+                  <ul>
+                    <li *ngFor="let type of types">
+                      {{ type.type.name }}
+                    </li>
+                  </ul>
+                </li>
+                <li class="list-group-item">
+                  <strong>Height: </strong>
+                  <span>{{ height }}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Weight: </strong>
+                  <span>{{ weight }}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Abilities: </strong>
+                  <ul>
+                    <li *ngFor="let ability of abilities">
+                      {{ ability.ability.name }}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </po-container>
+          </po-tab>
+          <po-tab p-label="Stats">
+            <po-container>
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let stat of stats">
+                  {{ stat.stat.name }}:
+                  <strong>
+                    {{ stat.base_stat }}
+                  </strong>
+                </li>
+              </ul>
+            </po-container>
+          </po-tab>
+        </po-tabs>
+      </div>
+
+    </div>
+  </po-container>
+</po-page-list>

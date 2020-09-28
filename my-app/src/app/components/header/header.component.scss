@@ -1,0 +1,33 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/theme.scss";
+
+header {
+    background-color: $black;
+    padding: 10px;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+
+    .description {
+        margin-left: 15px;
+        padding-left: 15px;
+        color: $white;
+        border-left: 1px solid;
+        border-color: $white;
+    }
+}
+
+a {
+    color: $white;
+
+    &:hover {
+        color: $yellow;
+    }
+}
+
+img {
+    cursor: pointer;
+    outline: none;
+}
